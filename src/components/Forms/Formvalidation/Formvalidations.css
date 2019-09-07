@@ -1,0 +1,9 @@
+.error-valid { border: 1px solid red; }
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
+.form-error
+{
+    color: red;
+}

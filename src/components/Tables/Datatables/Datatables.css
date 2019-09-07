@@ -1,0 +1,6 @@
+.react-bs-table-pagination .row {
+    margin-top:0 !important;
+}
+.react-bs-table-pagination .react-bootstrap-table-page-btns-ul {
+    float:right;
+}

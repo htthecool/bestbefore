@@ -1,0 +1,10 @@
+.mce-panel, .mce-menubar {
+    border-color:#eeeeee !important;
+    box-shadow: none !important;
+}
+.mce-top-part::before {
+    box-shadow: none !important;
+}
+.mce-widget .mce-txt {
+    font-family: 'Poppins', sans-serif !important;
+}
