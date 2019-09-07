@@ -5,7 +5,11 @@ import {
   Card,
   CardBody,
   Breadcrumb,
-  BreadcrumbItem
+  BreadcrumbItem,
+  InputGroup,
+  Alert,
+  InputGroupAddon,
+  InputGroupText
 } from "reactstrap";
 import "./Results.css";
 
@@ -33,8 +37,40 @@ class Results extends React.Component {
         <Row>
           <Col md={3} className="mb-30">
             <Card className="card-statistics">
-              <CardBody>
-                <div style={{ height: "90px", width: "100%" }}></div>
+              <CardBody className="extras">
+                <div style={{ height: "90px", width: "100%" }}>
+                  <label htmlFor="formGroupExampleInput">Product Groups</label>
+                    <input type="text" className="form-control" id="formGroupExampleInput" placeholder="Search" />
+                  </div>
+                <Alert color="light">Dietary</Alert>
+                <InputGroup>
+                  <InputGroupAddon className="check" addonType="prepend">  <InputGroupText><input type="checkbox" />  </InputGroupText>
+                  </InputGroupAddon>
+                  <p>Vegan</p>
+                </InputGroup>
+                <InputGroup>
+                  <InputGroupAddon className="check" addonType="prepend">  <InputGroupText><input type="checkbox" />  </InputGroupText>
+                  </InputGroupAddon>
+                  <p>Vegetarian</p>
+                </InputGroup>
+                <InputGroup>
+                  <InputGroupAddon className="check" addonType="prepend">  <InputGroupText><input type="checkbox" />  </InputGroupText>
+                  </InputGroupAddon>
+                  <p>Gluten Free</p>
+                </InputGroup>
+                <Alert color="light">Extras</Alert>
+                <InputGroup>
+                  <InputGroupAddon className="check" addonType="prepend">  <InputGroupText><input type="checkbox" />  </InputGroupText>
+                  </InputGroupAddon>
+                  <p>Organic</p>
+                </InputGroup>
+                <InputGroup>
+                  <InputGroupAddon className="check" addonType="prepend">  <InputGroupText><input type="checkbox" />  </InputGroupText>
+                  </InputGroupAddon>
+                  <p>Fair Trade</p>
+                </InputGroup>
+                <div className="logodiv"><img src="src/assets/images/textlogozomp.png"/></div>
+                
               </CardBody>
             </Card>
           </Col>
