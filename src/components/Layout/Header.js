@@ -50,7 +50,65 @@ class Header extends Component {
               aria-haspopup="true"
               aria-expanded="false"
             >
-              <i style={{ color: "#ffffff" }} className="ti-shopping-cart"></i>
+              <i
+                style={{
+                  color: this.props.path == "/" ? "#37A289" : "#FFFFFF"
+                }}
+                className="ti-bell"
+              ></i>
+              <span className="badge badge-danger notification-status"> </span>
+            </a>
+
+            <div className="dropdown-menu dropdown-menu-right dropdown-big dropdown-notifications">
+              <div className="dropdown-header notifications">
+                <strong>Notifications</strong>
+                <span className="badge badge-pill badge-warning">05</span>
+              </div>
+
+              <div className="dropdown-divider"></div>
+              <a href="#" className="dropdown-item">
+                New registered user{" "}
+                <small className="float-right text-muted time">Just now</small>{" "}
+              </a>
+              <a href="#" className="dropdown-item">
+                New invoice received{" "}
+                <small className="float-right text-muted time">22 mins</small>{" "}
+              </a>
+              <a href="#" className="dropdown-item">
+                Server error report
+                <small className="float-right text-muted time">
+                  7 hrs
+                </small>{" "}
+              </a>
+              <a href="#" className="dropdown-item">
+                Database report
+                <small className="float-right text-muted time">
+                  1 days
+                </small>{" "}
+              </a>
+              <a href="#" className="dropdown-item">
+                Order confirmation
+                <small className="float-right text-muted time">
+                  2 days
+                </small>{" "}
+              </a>
+            </div>
+          </li>
+          <li className="nav-item dropdown ">
+            <a
+              className="nav-link top-nav"
+              data-toggle="dropdown"
+              href="#"
+              role="button"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              <i
+                style={{
+                  color: this.props.path == "/" ? "#37A289" : "#FFFFFF"
+                }}
+                className="ti-shopping-cart"
+              ></i>
               <span className="badge badge-danger notification-status"> </span>
             </a>
 

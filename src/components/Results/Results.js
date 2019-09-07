@@ -1,5 +1,6 @@
 import React from "react";
 import {
+  Button,
   Row,
   Col,
   Card,
@@ -9,7 +10,7 @@ import {
 } from "reactstrap";
 import "./Results.css";
 
-const products = require("./stock.json");
+const products = require("./stock_new.json");
 class Results extends React.Component {
   render() {
     console.log("products", products);
@@ -52,6 +53,40 @@ class Results extends React.Component {
                   >
                     <CardBody>
                       <h2 className="productTitle">{product.Description}</h2>
+                      <h5 className="productQuantity">
+                        {product.NetWeightKg} kg
+                      </h5>
+                      <div className="productImageWrapper">
+                        <img
+                          src={`assets/images/products/${product.Picture}`}
+                        />
+                      </div>
+                      <h5 className="productInStock">{product.inStock} stk.</h5>
+                      <h5 className="productBestBefore">
+                        Best before: {product.expiryDates}
+                      </h5>
+                      <h5 className="productRRP">
+                        RRP: €{product.recommendedRetailPrice}
+                      </h5>
+                      <h5 className="productDiscounted">
+                        Discounted: €{product.Price}
+                      </h5>
+                      <Row
+                        style={{ paddingTop: "30px", paddingBottom: "20px" }}
+                      >
+                        <Col md={5}>
+                          <input
+                            type="text"
+                            className="form-control"
+                            placeholder="Qty"
+                          />
+                        </Col>
+                        <Col md={7}>
+                          <Button style={{ width: "100%" }} className="button">
+                            ADD TO CART
+                          </Button>
+                        </Col>
+                      </Row>
                     </CardBody>
                   </Card>
                 </Col>
