@@ -56,3 +56,27 @@
   text-align: center;
   color: #363636;
 }
+
+img{
+  width:75%;
+  height: auto;
+  align-items: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.logodiv{
+  position: fixed;
+  left: 30px;
+  bottom: 30px;
+}
+
+.extras{
+  height: 90%;
+
+}
+.check{
+  background-color: transparent;
+  background: transparent;
+}
