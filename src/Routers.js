@@ -45,7 +45,7 @@ const Routers = () => {
   return (
     <Base>
       <Switch>
-        <Route exact path="/" component={Home} />
+        <Route exact path="/" component={Results} />
         <Route path="/accordion" component={Accordions} />
         <Route path="/alerts" component={Alerts} />
         <Route path="/buttons" component={Buttons} />

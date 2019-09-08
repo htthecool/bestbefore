@@ -1,3 +1,9 @@
+## Best before - saving food waste in retail
+
+We let supermarkets list products that are close to "best before" date. 
+
+We list these products on our marketplace where people can buy these products.
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>

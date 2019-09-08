@@ -1,5 +1,5 @@
 {
-  "name": "webmin-react",
+  "name": "Best-before",
   "version": "0.1.1",
   "homepage": "http://themes.potenzaglobalsolutions.com/html/webmin-react-js-admin-dashboard-template/light",
   "private": true,
@@ -46,7 +46,7 @@
     "typeface-roboto": "0.0.54"
   },
   "scripts": {
-    "start": "webpack-dev-server --config webpack.dev.js --inline --open",
+    "start": "webpack-dev-server --config webpack.dev.js --inline --open --public",
     "clean": "rimraf dist/",
     "build": "npm run clean && webpack --config webpack.prod.js --progress --profile --bail",
     "test": "react-scripts test --env=jsdom",

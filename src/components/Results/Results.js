@@ -11,6 +11,10 @@ import {
   DropdownItem,
   Breadcrumb,
   BreadcrumbItem,
+  Modal,
+  ModalHeader,
+  ModalBody,
+  ModalFooter,
   Input,
   InputGroup,
   Alert,
@@ -25,10 +29,20 @@ class Results extends React.Component {
     super();
 
     this.caretdemo = this.caretdemo.bind(this);
-
+    this.addToCartButtonClick = this.addToCartButtonClick.bind(this);
+    this.toggle = this.toggle.bind(this);
     this.state = {
-      caretdemo: false
+      caretdemo: false,
+      modal: false
     };
+  }
+  addToCartButtonClick() {
+    this.toggle();
+  }
+  toggle() {
+    this.setState({
+      modal: !this.state.modal
+    });
   }
   caretdemo() {
     this.setState(prevState => ({
@@ -39,7 +53,7 @@ class Results extends React.Component {
     console.log("products", products);
     return (
       <div>
-        <div className="page-title">
+        <div className="page-title hideOnPhone">
           <Row style={{ padding: "40px 0px 30px 0px" }}>
             <Col md={3}></Col>
             <Col sm={3}>
@@ -84,7 +98,7 @@ class Results extends React.Component {
         <Row>
           <Col md={3} className="mb-30">
             <Card
-              className="card-statistics"
+              className="card-statistics hideOnPhone"
               style={{ background: "transparent", boxShadow: "none" }}
             >
               <CardBody
@@ -203,7 +217,7 @@ class Results extends React.Component {
                       </div>
                       <h5 className="productInStock">{product.inStock} stk.</h5>
                       <h5 className="productBestBefore">
-                        Best before: {product.expiryDates}
+                        Best before: {product.expiryDate}
                       </h5>
                       <h5 className="productRRP">
                         RRP: €{product.recommendedRetailPrice}
@@ -225,6 +239,7 @@ class Results extends React.Component {
                           <Button
                             style={{ width: "100%", padding: "10px" }}
                             className="button"
+                            onClick={this.addToCartButtonClick}
                           >
                             ADD TO CART
                           </Button>
@@ -237,6 +252,28 @@ class Results extends React.Component {
             </Row>
           </Col>
         </Row>
+        <div>
+          <Modal
+            isOpen={this.state.modal}
+            toggle={this.toggle}
+            className={this.props.className}
+          >
+            <ModalHeader toggle={this.toggle}>Sorry</ModalHeader>
+            <ModalBody>
+              <Row>
+                <img src="/assets/images/food-waste.jpg" />
+              </Row>
+              <Row>
+                <p>We will let you be food waste saver soon!!</p>
+              </Row>
+            </ModalBody>
+            <ModalFooter>
+              <Button color="secondary" onClick={this.toggle}>
+                Cancel
+              </Button>
+            </ModalFooter>
+          </Modal>
+        </div>
       </div>
     );
   }

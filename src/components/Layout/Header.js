@@ -21,20 +21,17 @@ class Header extends Component {
     return (
       <nav
         style={{
-          background: this.props.path == "/" ? "transparent" : "#37A289"
+          background: this.props.path == "/home" ? "transparent" : "#37A289"
         }}
         className="admin-header navbar navbar-default col-lg-12 col-12 p-0 fixed-top d-flex flex-row bbHeader"
       >
         <div className="text-left navbar-brand-wrapper brandLogo">
           <Link className="brand-logo" to="/">
-            {this.props.path == "/" ? (
+            {this.props.path == "/home" ? (
               <img src="assets/images/logo.png" alt="" />
             ) : (
               <img src="assets/images/logo-white.png" alt="" />
             )}
-          </Link>
-          <Link className="navbar-brand brand-logo-mini" to="/">
-            <img src="assets/images/logo-icon-dark.png" alt="" />
           </Link>
         </div>
         {/* <!-- Top bar left --> */}
@@ -52,7 +49,7 @@ class Header extends Component {
             >
               <i
                 style={{
-                  color: this.props.path == "/" ? "#37A289" : "#FFFFFF"
+                  color: this.props.path == "/home" ? "#37A289" : "#FFFFFF"
                 }}
                 className="ti-bell"
               ></i>
@@ -67,23 +64,17 @@ class Header extends Component {
 
               <div className="dropdown-divider"></div>
               <a href="#" className="dropdown-item">
-                New registered user{" "}
+                New items for sale in REWE{" "}
                 <small className="float-right text-muted time">Just now</small>{" "}
               </a>
               <a href="#" className="dropdown-item">
-                New invoice received{" "}
+                Grapes at 90% discount at EDEKA{" "}
                 <small className="float-right text-muted time">22 mins</small>{" "}
               </a>
               <a href="#" className="dropdown-item">
-                Server error report
+                Free takeaway from Rewe Haputbahnof
                 <small className="float-right text-muted time">
                   7 hrs
-                </small>{" "}
-              </a>
-              <a href="#" className="dropdown-item">
-                Database report
-                <small className="float-right text-muted time">
-                  1 days
                 </small>{" "}
               </a>
               <a href="#" className="dropdown-item">
@@ -105,7 +96,7 @@ class Header extends Component {
             >
               <i
                 style={{
-                  color: this.props.path == "/" ? "#37A289" : "#FFFFFF"
+                  color: this.props.path == "/home" ? "#37A289" : "#FFFFFF"
                 }}
                 className="ti-shopping-cart"
               ></i>
@@ -114,35 +105,29 @@ class Header extends Component {
 
             <div className="dropdown-menu dropdown-menu-right dropdown-big dropdown-notifications">
               <div className="dropdown-header notifications">
-                <strong>Notifications</strong>
-                <span className="badge badge-pill badge-warning">05</span>
+                <strong>Cart</strong>
+                <span className="badge badge-pill badge-warning">03</span>
               </div>
 
               <div className="dropdown-divider"></div>
               <a href="#" className="dropdown-item">
-                New registered user{" "}
+                Allos Frucht Pur 75% Mango{" "}
                 <small className="float-right text-muted time">Just now</small>{" "}
               </a>
               <a href="#" className="dropdown-item">
-                New invoice received{" "}
-                <small className="float-right text-muted time">22 mins</small>{" "}
+                Berioo Porridge Chia{" "}
+                <small className="float-right text-muted time">Just now</small>{" "}
               </a>
               <a href="#" className="dropdown-item">
-                Server error report
+                Edamama Black Bean Spaghetti
                 <small className="float-right text-muted time">
-                  7 hrs
+                  Just now
                 </small>{" "}
               </a>
               <a href="#" className="dropdown-item">
-                Database report
+                Simply V Haferdrink
                 <small className="float-right text-muted time">
-                  1 days
-                </small>{" "}
-              </a>
-              <a href="#" className="dropdown-item">
-                Order confirmation
-                <small className="float-right text-muted time">
-                  2 days
+                  1 hr ago
                 </small>{" "}
               </a>
             </div>
@@ -151,7 +136,7 @@ class Header extends Component {
             <a
               className="nav-link nav-pill user-avatar"
               data-toggle="dropdown"
-              href="#"
+              href="/"
               role="button"
               aria-haspopup="true"
               aria-expanded="false"
