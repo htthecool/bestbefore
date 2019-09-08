@@ -34,3 +34,15 @@
 .bbHeader {
   background-color: #37a289;
 }
+
+.admin-header .navbar-brand img {
+  height: auto !important;
+}
+
+.brandLogo {
+  padding: 10px 0px 10px 0px;
+}
+.row {
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+}

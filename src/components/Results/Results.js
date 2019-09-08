@@ -5,8 +5,13 @@ import {
   Col,
   Card,
   CardBody,
+  Dropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem,
   Breadcrumb,
   BreadcrumbItem,
+  Input,
   InputGroup,
   Alert,
   InputGroupAddon,
@@ -16,73 +21,172 @@ import "./Results.css";
 
 const products = require("./stock_new.json");
 class Results extends React.Component {
+  constructor() {
+    super();
+
+    this.caretdemo = this.caretdemo.bind(this);
+
+    this.state = {
+      caretdemo: false
+    };
+  }
+  caretdemo() {
+    this.setState(prevState => ({
+      caretdemo: !prevState.caretdemo
+    }));
+  }
   render() {
     console.log("products", products);
     return (
       <div>
         <div className="page-title">
-          <Row>
-            <Col sm={6}>
-              <h4 className="mb-0">Results</h4>
+          <Row style={{ padding: "40px 0px 30px 0px" }}>
+            <Col md={3}></Col>
+            <Col sm={3}>
+              <input
+                type="text"
+                className="form-control filterSearchInput"
+                id="formGroupExampleInput"
+                placeholder="Search"
+              />
             </Col>
-            <Col sm={6}>
-              <Breadcrumb className="float-left float-sm-right">
-                <BreadcrumbItem>
-                  <a href="#">Results</a>
-                </BreadcrumbItem>
-                <BreadcrumbItem active>Results</BreadcrumbItem>
-              </Breadcrumb>
+            <Col style={{ display: "flex", alignItems: "center" }} md={3}>
+              <Dropdown
+                style={{ backgroundColor: "#37a289" }}
+                isOpen={this.state.caretdemo}
+                toggle={this.caretdemo}
+              >
+                <DropdownToggle caret>Distance</DropdownToggle>
+                <DropdownMenu>
+                  <DropdownItem>0.5 miles</DropdownItem>
+                  <DropdownItem>2 miles</DropdownItem>
+                  <DropdownItem>5 miles</DropdownItem>
+                  <DropdownItem>10 miles</DropdownItem>
+                </DropdownMenu>
+              </Dropdown>
+            </Col>
+            <Col sm={3}>
+              <Button
+                style={{
+                  width: "50%",
+                  padding: "10px",
+                  backgroundColor: "#e6e6e6",
+                  color: "#333",
+                  border: "none"
+                }}
+                className="button pull-right"
+              >
+                Checkout
+              </Button>
             </Col>
           </Row>
         </div>
         <Row>
           <Col md={3} className="mb-30">
-            <Card className="card-statistics">
-              <CardBody className="extras">
-                <div style={{ height: "90px", width: "100%" }}>
-                  <label htmlFor="formGroupExampleInput">Product Groups</label>
-                    <input type="text" className="form-control" id="formGroupExampleInput" placeholder="Search" />
-                  </div>
-                <Alert color="light">Dietary</Alert>
-                <InputGroup>
-                  <InputGroupAddon className="check" addonType="prepend">  <InputGroupText><input type="checkbox" />  </InputGroupText>
-                  </InputGroupAddon>
-                  <p>Vegan</p>
-                </InputGroup>
-                <InputGroup>
-                  <InputGroupAddon className="check" addonType="prepend">  <InputGroupText><input type="checkbox" />  </InputGroupText>
-                  </InputGroupAddon>
-                  <p>Vegetarian</p>
-                </InputGroup>
-                <InputGroup>
-                  <InputGroupAddon className="check" addonType="prepend">  <InputGroupText><input type="checkbox" />  </InputGroupText>
-                  </InputGroupAddon>
-                  <p>Gluten Free</p>
-                </InputGroup>
-                <Alert color="light">Extras</Alert>
-                <InputGroup>
-                  <InputGroupAddon className="check" addonType="prepend">  <InputGroupText><input type="checkbox" />  </InputGroupText>
-                  </InputGroupAddon>
-                  <p>Organic</p>
-                </InputGroup>
-                <InputGroup>
-                  <InputGroupAddon className="check" addonType="prepend">  <InputGroupText><input type="checkbox" />  </InputGroupText>
-                  </InputGroupAddon>
-                  <p>Fair Trade</p>
-                </InputGroup>
-                <div className="logodiv"><img src="src/assets/images/textlogozomp.png"/></div>
-                
+            <Card
+              className="card-statistics"
+              style={{ background: "transparent", boxShadow: "none" }}
+            >
+              <CardBody
+                style={{
+                  background: "transparent",
+                  boxShadow: "none",
+                  paddingBottom: "200px",
+                  paddingTop: "0px"
+                }}
+                className="extras"
+              >
+                <h3 className="filterSectionHeading">Product Groups</h3>
+                <Row style={{ padding: "10px 0px 5px 0px" }}>
+                  <input
+                    type="text"
+                    className="form-control filterSearchInput"
+                    id="formGroupExampleInput"
+                    placeholder="Search"
+                  />
+                </Row>
+
+                <h4 style={{ paddingTop: "20px" }} className="filterHeading">
+                  Dietary
+                </h4>
+                <Row style={{ padding: "5px 0px 5px 0px" }}>
+                  <InputGroup>
+                    <InputGroupAddon addonType="prepend">
+                      {" "}
+                      <InputGroupText>
+                        <input type="checkbox" />{" "}
+                      </InputGroupText>
+                    </InputGroupAddon>
+                    <Input placeholder="Vegan" disabled />
+                  </InputGroup>
+                </Row>
+                <Row style={{ padding: "5px 0px 5px 0px" }}>
+                  <InputGroup>
+                    <InputGroupAddon addonType="prepend">
+                      {" "}
+                      <InputGroupText>
+                        <input type="checkbox" />{" "}
+                      </InputGroupText>
+                    </InputGroupAddon>
+                    <Input placeholder="Vegetarian" disabled />
+                  </InputGroup>
+                </Row>
+                <Row style={{ padding: "5px 0px 5px 0px" }}>
+                  <InputGroup>
+                    <InputGroupAddon addonType="prepend">
+                      {" "}
+                      <InputGroupText>
+                        <input type="checkbox" />{" "}
+                      </InputGroupText>
+                    </InputGroupAddon>
+                    <Input placeholder="Gluten Free" disabled />
+                  </InputGroup>
+                </Row>
+
+                <h4 style={{ paddingTop: "20px" }} className="filterHeading">
+                  Extras
+                </h4>
+                <Row style={{ padding: "5px 0px 5px 0px" }}>
+                  <InputGroup>
+                    <InputGroupAddon addonType="prepend">
+                      {" "}
+                      <InputGroupText>
+                        <input type="checkbox" />{" "}
+                      </InputGroupText>
+                    </InputGroupAddon>
+                    <Input placeholder="Organice" disabled />
+                  </InputGroup>
+                </Row>
+                <Row style={{ padding: "5px 0px 5px 0px" }}>
+                  <InputGroup>
+                    <InputGroupAddon addonType="prepend">
+                      {" "}
+                      <InputGroupText>
+                        <input type="checkbox" />{" "}
+                      </InputGroupText>
+                    </InputGroupAddon>
+                    <Input placeholder="Fair Trade" disabled />
+                  </InputGroup>
+                </Row>
+                <div className="logodiv">
+                  <img src="src/assets/images/textlogozomp.png" />
+                </div>
               </CardBody>
             </Card>
           </Col>
           <Col md={9} className="mb-30">
             <Row>
               {products.map((product, idx) => (
-                <Col key={idx} md={4} className="mb-30">
+                <Col
+                  style={{ paddingLeft: "0px" }}
+                  key={idx}
+                  md={4}
+                  className="mb-30"
+                >
                   <Card
                     style={{
                       background: "#FFFFFF",
-                      boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
+                      boxShadow: "0px 4px 4px 4px rgba(0, 0, 0, 0.25)",
                       borderRadius: "10px"
                     }}
                     className="card-statistics"
@@ -110,15 +214,18 @@ class Results extends React.Component {
                       <Row
                         style={{ paddingTop: "30px", paddingBottom: "20px" }}
                       >
-                        <Col md={5}>
+                        <Col md={4}>
                           <input
                             type="text"
                             className="form-control"
                             placeholder="Qty"
                           />
                         </Col>
-                        <Col md={7}>
-                          <Button style={{ width: "100%" }} className="button">
+                        <Col md={8}>
+                          <Button
+                            style={{ width: "100%", padding: "10px" }}
+                            className="button"
+                          >
                             ADD TO CART
                           </Button>
                         </Col>

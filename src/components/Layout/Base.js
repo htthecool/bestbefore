@@ -19,12 +19,16 @@ class Base extends Component {
     console.log("location", location);
     return (
       <div
+        style={{ backgroundColor: "#FFFFFF" }}
         className={this.state.toggleactive ? "wrapper  slide-menu" : "wrapper"}
       >
         <Header path={location.pathname} updateParent={this.updateValue} />
         <div className="container-fluid">
           <div className="row">
-            <div style={{ margin: "0px" }} className="content-wrapper">
+            <div
+              style={{ margin: "0px", backgroundColor: "transparent" }}
+              className="content-wrapper"
+            >
               {this.props.children}
 
               <Footer />

@@ -25,8 +25,8 @@ class Header extends Component {
         }}
         className="admin-header navbar navbar-default col-lg-12 col-12 p-0 fixed-top d-flex flex-row bbHeader"
       >
-        <div className="text-left navbar-brand-wrapper">
-          <Link className="navbar-brand brand-logo" to="/">
+        <div className="text-left navbar-brand-wrapper brandLogo">
+          <Link className="brand-logo" to="/">
             {this.props.path == "/" ? (
               <img src="assets/images/logo.png" alt="" />
             ) : (
